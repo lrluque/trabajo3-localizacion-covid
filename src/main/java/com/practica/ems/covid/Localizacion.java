@@ -83,16 +83,7 @@ public class Localizacion {
 		String cadena = "";
 		for(int i = 0; i < this.lista.size(); i++) {
 			PosicionPersona pp = lista.get(i);
-	        cadena += String.format("%s;", pp.getDocumento());
-	        FechaHora fecha = pp.getFechaPosicion();        
-	        cadena+=String.format("%02d/%02d/%04d;%02d:%02d;", 
-	        		fecha.getFecha().getDia(), 
-	        		fecha.getFecha().getMes(), 
-	        		fecha.getFecha().getAnio(),
-	        		fecha.getHora().getHora(),
-	        		fecha.getHora().getMinuto());
-	        cadena+=String.format("%.4f;%.4f\n", pp.getCoordenada().getLatitud(), 
-	        		pp.getCoordenada().getLongitud());
+	        cadena = pp.toString();
 	    }
 		
 		return cadena;		
